@@ -144,7 +144,7 @@ def trainDoc2VecModel(texts, load=True):
     else:
         print('Training Doc2Vec Model...')
         documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(texts)]
-        model = Doc2Vec(documents, vector_size=5, window=2, min_count=1, workers=4)
+        model = Doc2Vec(documents, vector_size=50, window=2, min_count=2, workers=4, epochs=40)
         model.save("model/doc2vec_model/doc2vec")
         return model
 
